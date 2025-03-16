@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,15 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+                mortar: {
+                    DEFAULT: '#1e40af', // Blue
+                    hover: '#1e3a8a',
+                },
+                target: {
+                    DEFAULT: '#ef4444', // Red
+                    hover: '#b91c1c',
+                }
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +93,41 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+                'fade-in': {
+                    '0%': { opacity: '0' },
+                    '100%': { opacity: '1' }
+                },
+                'fade-out': {
+                    '0%': { opacity: '1' },
+                    '100%': { opacity: '0' }
+                },
+                'slide-up': {
+                    '0%': { transform: 'translateY(10px)', opacity: '0' },
+                    '100%': { transform: 'translateY(0)', opacity: '1' }
+                },
+                'scale-in': {
+                    '0%': { transform: 'scale(0.95)', opacity: '0' },
+                    '100%': { transform: 'scale(1)', opacity: '1' }
+                },
+                'pulse-blue': {
+                    '0%, 100%': { boxShadow: '0 0 0 0px rgba(37, 99, 235, 0.3)' },
+                    '50%': { boxShadow: '0 0 0 10px rgba(37, 99, 235, 0)' }
+                },
+                'pulse-red': {
+                    '0%, 100%': { boxShadow: '0 0 0 0px rgba(239, 68, 68, 0.3)' },
+                    '50%': { boxShadow: '0 0 0 10px rgba(239, 68, 68, 0)' }
+                }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+                'fade-in': 'fade-in 0.3s ease-out',
+                'fade-out': 'fade-out 0.3s ease-out',
+                'slide-up': 'slide-up 0.4s ease-out',
+                'scale-in': 'scale-in 0.3s ease-out',
+                'pulse-blue': 'pulse-blue 2s infinite',
+                'pulse-red': 'pulse-red 2s infinite'
 			}
 		}
 	},
